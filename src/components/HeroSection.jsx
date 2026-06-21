@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import Confetti from 'react-confetti';
-import { useWindowSize } from 'react-use';
 
 const Particles = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -61,72 +59,18 @@ const Particles = () => {
   );
 };
 
-const Balloons = () => {
-  const balloons = Array.from({ length: 6 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 80 + 10,
-    delay: Math.random() * 2,
-    duration: Math.random() * 10 + 15,
-    color: i % 2 === 0 ? '#b76e79' : '#ffd1dc'
-  }));
-
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-80">
-      {balloons.map((b) => (
-        <motion.div
-          key={b.id}
-          className="absolute bottom-[-200px]"
-          style={{ left: `${b.x}%` }}
-          animate={{
-            y: ['0vh', '-120vh'],
-            x: ['0px', '20px', '-20px', '0px']
-          }}
-          transition={{
-            y: { duration: b.duration, repeat: Infinity, ease: 'linear', delay: b.delay },
-            x: { duration: 3, repeat: Infinity, ease: 'easeInOut', delay: b.delay }
-          }}
-        >
-          <svg width="60" height="180" viewBox="0 0 60 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M30 70 Q 20 100 30 130 T 30 180" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" fill="none" />
-            <path d="M30 70 C 45 70 60 50 60 30 C 60 10 45 0 30 0 C 15 0 0 10 0 30 C 0 50 15 70 30 70 Z" fill={b.color} />
-            <path d="M26 70 L 34 70 L 32 75 L 28 75 Z" fill={b.color} />
-          </svg>
-        </motion.div>
-      ))}
-    </div>
-  );
-};
-
 const HeroSection = () => {
-  const { width, height } = useWindowSize();
-  const [showConfetti, setShowConfetti] = useState(true);
-
-  // Stop new confetti from falling after 7 seconds, let existing ones fall gracefully
-  useEffect(() => {
-    const timer = setTimeout(() => setShowConfetti(false), 7000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center">
-      <Confetti 
-        width={width} 
-        height={height} 
-        colors={['#b76e79', '#ffd1dc', '#fdfbf7', '#d4af37']}
-        numberOfPieces={showConfetti ? 200 : 0}
-        recycle={true}
-        style={{ zIndex: 50, position: 'fixed' }}
-      />
       <Particles />
-      <Balloons />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         className="z-10"
       >
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 1.5 }}
@@ -136,30 +80,30 @@ const HeroSection = () => {
             To My Favorite Person
           </span>
         </motion.div>
-        
+
         <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cream via-soft-pink to-rose-gold text-glow mb-6 leading-tight">
-          Happy Birthday,<br/> Kisara!
+          Happy Birthday,<br /> Kisara!
         </h1>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1.5 }}
           className="text-lg md:text-xl text-cream/70 max-w-2xl mx-auto font-light leading-relaxed"
         >
-          Today is all about you. A celebration of the most amazing, gorgeous, and loving person in my world. 
+          Today is all about you. A celebration of the most amazing, gorgeous, and loving person in my world.
         </motion.p>
       </motion.div>
-      
+
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-xs text-rose-gold/70 tracking-widest uppercase">Scroll</span>
-        <motion.div 
+        <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
           className="w-[1px] h-12 bg-gradient-to-b from-rose-gold to-transparent"

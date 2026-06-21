@@ -6,6 +6,7 @@ import ReasonsSection from './components/ReasonsSection';
 import QuoteSection from './components/QuoteSection';
 import SecretMessageModal from './components/SecretMessageModal';
 import MusicPlayer from './components/MusicPlayer';
+import CutePets from './components/CutePets';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="min-h-screen bg-dark-bg text-cream font-sans overflow-x-hidden relative">
       <MusicPlayer />
+      <CutePets />
       
       <main className="max-w-5xl mx-auto px-6 py-12 md:py-24 space-y-32">
         <HeroSection />
