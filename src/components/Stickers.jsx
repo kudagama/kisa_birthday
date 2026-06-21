@@ -57,12 +57,12 @@ const FlorkFlower = ({ className }) => (
 
 const Stickers = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 md:z-30">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden z-40">
       {/* Sticker 1 - Top Left */}
       <motion.div 
         animate={{ y: [0, -10, 0], rotate: [-2, 2, -2] }}
         transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        className="absolute top-20 left-2 md:top-32 md:left-10 w-16 h-16 sm:w-24 sm:h-24 md:w-40 md:h-40 opacity-40 md:opacity-100"
+        className="absolute top-20 left-2 md:top-32 md:left-10 w-20 h-20 sm:w-24 sm:h-24 md:w-40 md:h-40 opacity-90 md:opacity-100"
       >
         <FlorkHeart className="w-full h-full" />
       </motion.div>
@@ -71,7 +71,7 @@ const Stickers = () => {
       <motion.div 
         animate={{ y: [0, 15, 0], rotate: [2, -2, 2] }}
         transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-        className="absolute top-[35%] right-2 md:right-16 w-20 h-20 sm:w-28 sm:h-28 md:w-48 md:h-48 transform scale-x-[-1] opacity-40 md:opacity-100"
+        className="absolute top-[35%] right-2 md:right-16 w-24 h-24 sm:w-28 sm:h-28 md:w-48 md:h-48 transform scale-x-[-1] opacity-90 md:opacity-100"
       >
         <FlorkLoveEyes className="w-full h-full" />
       </motion.div>
@@ -80,7 +80,7 @@ const Stickers = () => {
       <motion.div 
         animate={{ y: [0, -12, 0], rotate: [-3, 3, -3] }}
         transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 2 }}
-        className="absolute top-[55%] left-2 md:left-12 w-16 h-16 sm:w-28 sm:h-28 md:w-40 md:h-40 opacity-40 md:opacity-100"
+        className="absolute top-[55%] left-2 md:left-12 w-20 h-20 sm:w-28 sm:h-28 md:w-40 md:h-40 opacity-90 md:opacity-100"
       >
         <FlorkFlower className="w-full h-full" />
       </motion.div>
@@ -89,7 +89,7 @@ const Stickers = () => {
       <motion.div 
         animate={{ y: [0, -10, 0], rotate: [2, -4, 2] }}
         transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
-        className="absolute bottom-40 right-4 md:right-20 w-20 h-20 sm:w-28 sm:h-28 md:w-44 md:h-44 transform scale-x-[-1] opacity-40 md:opacity-100"
+        className="absolute bottom-40 right-4 md:right-20 w-24 h-24 sm:w-28 sm:h-28 md:w-44 md:h-44 transform scale-x-[-1] opacity-90 md:opacity-100"
       >
         <FlorkHappy className="w-full h-full" />
       </motion.div>
