@@ -36,7 +36,8 @@ You inspire me every single day with your kindness, your strength, and your beau
 Happy Birthday to the love of my life. I promise to spend this year, and every year after, making sure you know exactly how special you are.
 
 Forever yours,
-[Your Name]`;
+Anuuuuuuu
+`;
 
   // Prevent background scrolling when modal is open
   useEffect(() => {
@@ -52,22 +53,22 @@ Forever yours,
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="relative w-full max-w-2xl max-h-[80vh] overflow-y-auto bg-dark-surface border border-rose-gold/30 rounded-2xl p-8 md:p-12 shadow-[0_0_40px_rgba(183,110,121,0.2)] scrollbar-hide"
           >
-            <button 
+            <button
               onClick={onClose}
               className="absolute top-4 right-4 text-cream/50 hover:text-rose-gold transition-colors"
             >
@@ -85,7 +86,7 @@ Forever yours,
             <div className="font-heading text-lg md:text-xl leading-loose text-cream/90 whitespace-pre-wrap">
               {isOpen && <TypewriterText text={message} delay={0.3} speed={0.03} />}
             </div>
-            
+
           </motion.div>
         </div>
       )}
