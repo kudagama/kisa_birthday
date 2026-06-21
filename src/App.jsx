@@ -18,7 +18,7 @@ function App() {
       <FloatingLove />
       <Stickers />
       
-      <main className="max-w-5xl mx-auto px-6 py-12 md:py-24 space-y-32">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-24 space-y-20 md:space-y-32 relative z-10">
         <HeroSection />
         
         <CountdownTimeline />
