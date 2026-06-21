@@ -82,7 +82,7 @@ const HeroSection = () => {
         </motion.div>
 
         <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cream via-soft-pink to-rose-gold text-glow mb-4 md:mb-6 leading-tight">
-          Happy Birthday,<br /> Kisara!
+          Happy Birthday Manika,<br /> Kisara!
         </h1>
 
         <motion.p
